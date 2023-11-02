@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "606748692010",
+    "project_id": "gocabs-e4b7a",
+    "storage_bucket": "gocabs-e4b7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606748692010:android:2bcc2edc7f7fb8e5cefd53",
+        "android_client_info": {
+          "package_name": "com.example.gocabs_live"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM9rLgImzWGrNcYSxaaLm9CbiM2CUCiwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
