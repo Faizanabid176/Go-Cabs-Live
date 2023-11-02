@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-var schemecolor = Colors.yellow;
+var schemecolor = Color(0xffffc000);
 var bgcolor = Color(0xfff6f6f6);
 var textboxcolor = const Color(0xfff4eef0);
 var inputfieldcolor = Color.fromARGB(255, 212, 212, 212);

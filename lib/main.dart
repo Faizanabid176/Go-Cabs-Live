@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gocabs_live/Screens/homescreen.dart';
+import 'package:gocabs_live/config.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,44 +16,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+          primaryColor: schemecolor,
+          appBarTheme: AppBarTheme(
+              iconTheme: const IconThemeData(color: Colors.white),
+              backgroundColor: schemecolor,
+              systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarColor: schemecolor,
+              )),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                primary: schemecolor, onPrimary: Colors.white),
+          ),
+          textTheme: GoogleFonts.outfitTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: schemecolor,
+          ),
+          scaffoldBackgroundColor: bgcolor,
+          fontFamily: GoogleFonts.outfit().fontFamily),
+      darkTheme: ThemeData(
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.black,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
+      home: MyTabs(),
     );
   }
 }
