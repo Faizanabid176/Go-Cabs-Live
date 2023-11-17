@@ -7,6 +7,7 @@ import 'package:gocabs_live/Screens/homescreen.dart';
 import 'package:gocabs_live/config.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
 late SharedPreferences prefs;
 FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -18,7 +19,18 @@ void main() async {
   prefs = await SharedPreferences.getInstance();
   await Firebase.initializeApp();
   _getFirebaseMessagingToken();
+  await postData();
   runApp(const MyApp());
+}
+
+Future<void> postData() async {
+  var url = 'https://13gocabs.com.au/api/Hdl_UpdateToken.ashx';
+  var response = await http.post(Uri.parse(url), body: {
+    'token': prefs.getString('token'),
+  });
+
+  if (response.statusCode == 200) {
+  } else {}
 }
 
 class MyApp extends StatelessWidget {

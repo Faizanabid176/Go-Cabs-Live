@@ -204,6 +204,11 @@ class RideListView extends StatelessWidget {
                             '${filteredRides[index]['name']}',
                             style: TextStyle(
                                 fontSize: 16.0, fontWeight: FontWeight.bold),
+                          ).pOnly(top: 4),
+                          Text(
+                            'Contact : ${filteredRides[index]['phoneno']}',
+                            style: TextStyle(
+                                fontSize: 16.0, fontWeight: FontWeight.bold),
                           ).pOnly(top: 4, bottom: 4),
                           Text(
                             'From: ${filteredRides[index]['pickup']}',
@@ -233,11 +238,13 @@ class RideListView extends StatelessWidget {
                           SizedBox(height: 8.0),
                           Row(
                             children: <Widget>[
+                              Icon(Icons.info_outline),
+                              SizedBox(width: 4.0),
+                              Text('${filteredRides[index]['ridestatus']}'),
+                              SizedBox(width: 16.0),
                               Icon(Icons.directions_car),
                               SizedBox(width: 4.0),
-                              Text(
-                                  'Ride Status : ${filteredRides[index]['ridestatus']}'),
-                              SizedBox(width: 16.0),
+                              Text('${filteredRides[index]['cartype']}'),
                             ],
                           ),
                         ],
